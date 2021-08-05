@@ -1,4 +1,5 @@
 .DS_Store
-
+oldinfo.json
 userinfo.json
 log.txt
+.vscode

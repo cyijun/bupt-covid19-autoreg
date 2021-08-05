@@ -6,11 +6,12 @@ import time
 import sys
 import traceback
 
+
 def routine():
-    
+
     class LoginError(Exception):
         pass
-    
+
     login_url = "https://app.bupt.edu.cn/uc/wap/login/check"
     base_url = "https://app.bupt.edu.cn/ncov/wap/default/index"
     save_url = "https://app.bupt.edu.cn/ncov/wap/default/save"
@@ -70,15 +71,27 @@ def routine():
         print("其他错误，错误信息如下")
         traceback.print_exc()
 
-
     print("\n\n")
     sys.stdout.flush()
-
 
 
 print("程序已成功运行\n\n")
 sys.stdout.flush()
 
+start_time='00:01'
+end_time='12:00'
+
+# 范围时间
+d_time = datetime.datetime.strptime(str(datetime.datetime.now().date())+start_time, '%Y-%m-%d%H:%M')
+d_time1 =  datetime.datetime.strptime(str(datetime.datetime.now().date())+end_time, '%Y-%m-%d%H:%M')
+
+#routine()
 while True:
-    routine()
-    time.sleep(3600)
+    # 当前时间
+    n_time = datetime.datetime.now()
+    # 判断当前时间是否在范围时间内
+    if n_time > d_time and n_time<d_time1:
+        routine()
+        time.sleep(3600)
+    else:
+        time.sleep(3600)
