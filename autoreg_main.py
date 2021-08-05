@@ -92,6 +92,4 @@ while True:
     # 判断当前时间是否在范围时间内
     if n_time > d_time and n_time<d_time1:
         routine()
-        time.sleep(3600)
-    else:
-        time.sleep(3600)
+    time.sleep(3600)
