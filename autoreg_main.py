@@ -85,7 +85,7 @@ end_time='12:00'
 d_time = datetime.datetime.strptime(str(datetime.datetime.now().date())+start_time, '%Y-%m-%d%H:%M')
 d_time1 =  datetime.datetime.strptime(str(datetime.datetime.now().date())+end_time, '%Y-%m-%d%H:%M')
 
-#routine()
+routine()
 while True:
     # 当前时间
     n_time = datetime.datetime.now()
