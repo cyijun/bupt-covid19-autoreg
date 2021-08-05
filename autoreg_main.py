@@ -6,7 +6,6 @@ import time
 import sys
 import traceback
 
-
 def routine():
     
     class LoginError(Exception):
@@ -40,8 +39,8 @@ def routine():
         html_content = session.get(base_url).text
 
         # Get history information
-        history_info_json_str = re.findall(r'oldInfo: ({[^\n]+})', html_content)[0]
-        history_info_dict = json.loads(history_info_json_str)
+        load_oif = open("oldinfo.json", "r")
+        history_info_dict = json.loads(load_oif.read())
 
         # Generate new information
         new_info_dict = history_info_dict.copy()
